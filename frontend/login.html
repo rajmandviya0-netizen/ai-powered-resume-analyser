@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#12141A">
+    <title>Sign In | AI Resume Analyzer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="/" aria-label="AI Resume Analyzer home">
+            <span class="brand-mark">AI</span>
+            <span>
+                <span class="brand-name">AI RESUME ANALYZER</span>
+                <span class="brand-subtitle">DECODE / ANALYZE / IMPROVE</span>
+            </span>
+        </a>
+        <nav class="auth-nav" aria-label="Main navigation">
+            <a href="/">Back to analyzer</a>
+        </nav>
+    </header>
+
+    <main class="paper auth-paper">
+        <div class="margin-line" aria-hidden="true"></div>
+        <div class="auth-layout">
+            <aside class="auth-aside">
+                <div class="auth-kicker">THE CAREER DESK / 01</div>
+                <h2>Make your next move count.</h2>
+                <p>Keep your resume work close at hand and return whenever you are ready to make your story clearer.</p>
+                <div class="auth-aside-note">A CLEARER STORY STARTS HERE</div>
+            </aside>
+
+            <section class="auth-main" aria-labelledby="authTitle">
+                <div class="auth-kicker">WELCOME BACK</div>
+                <h1 id="authTitle">Sign in</h1>
+                <p class="auth-intro">Continue to your resume workspace.</p>
+
+                <form class="auth-form" data-auth-form="login">
+                    <div class="auth-field">
+                        <label for="loginEmail">Email address</label>
+                        <input id="loginEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="auth-field">
+                        <label for="loginPassword">Password</label>
+                        <div class="password-field">
+                            <input id="loginPassword" name="password" type="password" autocomplete="current-password" maxlength="128" required>
+                            <button class="password-toggle" type="button" data-password-toggle="loginPassword" aria-label="Show password" aria-pressed="false">Show</button>
+                        </div>
+                    </div>
+
+                    <button class="auth-submit" type="submit">SIGN IN</button>
+                    <p class="auth-feedback" id="authFeedback" role="status" aria-live="polite"></p>
+                </form>
+
+                <p class="auth-switch">New here? <a href="/signup.html">Create an account</a></p>
+                <a class="auth-home-link" href="/">← Return to resume analyzer</a>
+            </section>
+        </div>
+    </main>
+    <script src="/auth.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Resume Analyzer</title>
+
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         TOP NAVIGATION
+    ====================================== -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-mark">
+                AI
+            </div>
+
+            <div>
+
+                <div class="brand-name">
+                    AI RESUME ANALYZER
+                </div>
+
+                <div class="brand-subtitle">
+                    DECODE / ANALYZE / IMPROVE
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="top-message">
+            BETTER RESUME
+            <span>→</span>
+            BRIGHTER FUTURE
+        </div>
+
+        <nav class="account-links" id="accountLinks" aria-label="Account">
+            <a href="/login.html">Sign in</a>
+            <a class="account-link-primary" href="/signup.html">Create account</a>
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================
+         PAPER
+    ====================================== -->
+
+    <main class="paper">
+
+
+        <!-- RED DOCUMENT MARGIN -->
+
+        <div class="margin-line"></div>
+
+
+
+        <!-- =================================
+             HEADER
+        ================================== -->
+
+        <section class="hero">
+
+            <div class="hero-left">
+
+                <div class="eyebrow">
+                    WELCOME TO
+                </div>
+
+                <h1>
+                    AI Resume<br>
+                    Analyzer
+                </h1>
+
+                <p class="hero-description">
+
+                    Upload your resume and let our AI analyze
+                    your skills, experience, and content
+                    structure to give you actionable insights.
+
+                </p>
+
+
+                <!-- ==========================
+                     UPLOAD SECTION
+                =========================== -->
+
+                <div class="section-heading">
+
+                    <span class="section-number">
+                        01
+                    </span>
+
+                    <span>
+                        UPLOAD YOUR RESUME
+                    </span>
+
+                    <div class="heading-line"></div>
+
+                </div>
+
+
+                <!-- UPLOAD BOX -->
+
+                <div
+                    class="upload-box"
+                    id="uploadBox"
+                >
+
+                    <div class="upload-icon">
+                        ↑
+                    </div>
+
+                    <div class="upload-main">
+                        Drag & Drop your PDF here
+                    </div>
+
+                    <div class="upload-sub">
+                        or click to browse
+                    </div>
+
+                    <div class="upload-info">
+                        Maximum file size: 25MB
+                        &nbsp; | &nbsp;
+                        PDF only
+                    </div>
+
+
+                    <label class="browse-button">
+
+                        <span>□</span>
+
+                        Browse File
+
+                        <input
+                            type="file"
+                            id="resumeFile"
+                            accept=".pdf,application/pdf"
+                            hidden
+                        >
+
+                    </label>
+
+                </div>
+
+
+                <!-- FILE CARD -->
+
+                <div
+                    class="file-card"
+                    id="fileCard"
+                >
+
+                    <div class="pdf-icon">
+                        PDF
+                    </div>
+
+                    <div class="file-details">
+
+                        <div
+                            class="file-name"
+                            id="fileName"
+                        >
+                            No file selected
+                        </div>
+
+                        <div
+                            class="file-size"
+                            id="fileSize"
+                        >
+                            Please upload a PDF resume
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="remove-button"
+                        id="removeFile"
+                        type="button"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <!-- ANALYZE BUTTON -->
+
+                <button
+                    class="analyze-button"
+                    id="analyzeButton"
+                    type="button"
+                >
+
+                    <span>
+                        ✦
+                    </span>
+
+                    ANALYZE RESUME
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- STATUS -->
+
+                <div
+                    class="status-message"
+                    id="statusMessage"
+                >
+                    Click Analyze to generate your report.
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 RIGHT SIDE
+            ================================== -->
+
+            <div class="hero-right">
+
+
+                <!-- REPORT NUMBER -->
+
+                <div class="report-number">
+
+                    <span>
+                        REPORT NO.
+                    </span>
+
+                    <strong>
+                        AR-2026-001
+                    </strong>
+
+                </div>
+
+
+
+                <!-- SCORE CARD -->
+
+                <div class="score-card">
+
+                    <div class="card-label">
+                        OVERALL SCORE
+                    </div>
+
+
+                    <div class="score-content">
+
+
+                        <!-- STAMP -->
+
+                        <div
+                            class="score-stamp"
+                            id="scoreStamp"
+                        >
+
+                            <div class="stamp-small">
+                                RESUME QUALITY
+                            </div>
+
+                            <div
+                                class="score-value"
+                                id="scoreValue"
+                            >
+                                00
+                            </div>
+
+                            <div class="stamp-out-of">
+                                /100
+                            </div>
+
+                            <div class="stamp-bottom">
+                                ANALYSIS
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- SCORE STATUS -->
+
+                        <div class="score-status">
+
+                            <div class="status-label">
+                                STATUS
+                            </div>
+
+                            <div
+                                class="status-badge"
+                                id="statusBadge"
+                            >
+                                WAITING
+                            </div>
+
+                            <p>
+                                Upload your resume to
+                                generate your personalized
+                                analysis.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     REPORT SUMMARY
+                ================================== -->
+
+                <section class="report-summary">
+
+
+                    <div class="section-heading">
+
+                        <span class="section-number">
+                            02
+                        </span>
+
+                        <span>
+                            REPORT SUMMARY
+                        </span>
+
+                        <div class="heading-line"></div>
+
+                    </div>
+
+
+
+                    <!-- STATUS -->
+
+                    <div class="summary-row">
+
+                        <span class="summary-icon">
+                            ☆
+                        </span>
+
+                        <span>
+                            Status
+                        </span>
+
+                        <strong id="summaryStatus">
+                            Waiting
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- STRENGTHS -->
+
+                    <div class="summary-row">
+
+                        <span class="summary-icon">
+                            ♧
+                        </span>
+
+                        <span>
+                            Strengths
+                        </span>
+
+                        <strong id="strengthCount">
+                            —
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- IMPROVEMENTS -->
+
+                    <div class="summary-row">
+
+                        <span class="summary-icon">
+                            △
+                        </span>
+
+                        <span>
+                            Improvements
+                        </span>
+
+                        <strong id="improvementCount">
+                            —
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- ATS -->
+
+                    <div class="summary-row">
+
+                        <span class="summary-icon">
+                            ▣
+                        </span>
+
+                        <span>
+                            ATS Score
+                        </span>
+
+                        <strong id="atsScore">
+                            —
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         DETAILED RESULTS
+                    ================================== -->
+
+                    <div class="analysis-details">
+
+
+                        <!-- SKILLS -->
+
+                        <div class="detail-block">
+
+                            <h3>
+                                SKILLS DETECTED
+                            </h3>
+
+                            <div
+                                id="skillsList"
+                                class="skills-list"
+                            >
+
+                                Analyze your resume to
+                                detect skills.
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- STRENGTHS -->
+
+                        <div class="detail-block">
+
+                            <h3>
+                                STRENGTHS
+                            </h3>
+
+                            <ul id="strengthList">
+
+                                <li>
+                                    Analysis results will
+                                    appear here.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+
+                        <!-- IMPROVEMENTS -->
+
+                        <div class="detail-block">
+
+                            <h3>
+                                IMPROVEMENTS
+                            </h3>
+
+                            <ul id="improvementList">
+
+                                <li>
+                                    Analysis results will
+                                    appear here.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+
+                        <!-- STRUCTURE -->
+
+                        <div class="detail-block">
+
+                            <h3>
+                                RESUME STRUCTURE
+                            </h3>
+
+                            <div
+                                id="structureResult"
+                                class="structure-result"
+                            >
+                                Waiting for analysis...
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================
+                     EDITOR NOTE
+                ================================== -->
+
+                <div class="editor-note">
+
+                    <div class="note-line"></div>
+
+                    <div>
+
+                        <div class="note-title">
+                            EDITOR'S NOTE
+                        </div>
+
+                        <p>
+                            A strong resume is your best
+                            introduction. We'll help you
+                            make it unforgettable.
+                        </p>
+
+                        <div class="editor-signature">
+                            The Editor
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             FOOTER
+        ================================== -->
+
+        <footer class="footer">
+
+            <span>
+                AI RESUME ANALYZER
+            </span>
+
+            <span>
+                CONFIDENTIAL
+            </span>
+
+            <span>
+                THANK YOU FOR TRUSTING OUR AI.
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="/script.js"></script>
+    <script src="/auth.js" defer></script>
+
+</body>
+
+</html>
